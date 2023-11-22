@@ -19,7 +19,7 @@ const thoughtSchema = new Schema(
         type: Schema.Types.ObjectId,
         ref: 'Thought',
     },
-    reactions: {
+    friends: {
         type: Schema.Types.ObjectId,
         ref: 'User',
     },
