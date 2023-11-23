@@ -35,6 +35,11 @@ thoughtSchema
     formatDate = moment(this.createdAt).format('LL')
     return formatDate;
   });
+ thoughtSchema
+  .virutal('reactionCount')
+  .get(function(){
+    return this.reactionSchema.lenght;
+  });
 
 const Student = model('student', studentSchema);
 
