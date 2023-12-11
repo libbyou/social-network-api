@@ -29,7 +29,7 @@ const reactionSchema = new Schema(
   }
 );
 
-thoughtSchema
+reactionSchema
   .virtual('formatDate')
   .get(function(){
     formatDate = moment(this.createdAt).format('LL')

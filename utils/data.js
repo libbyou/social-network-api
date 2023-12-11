@@ -100,7 +100,7 @@ const usernames = [
   
   // Gets a random full name
   const getRandomUsername = () =>
-    `${getRandomArrItem(names)} ${getRandomArrItem(names)}`;
+    `${getRandomArrItem(usernames)} ${getRandomArrItem(usernames)}`;
   
   // Function to generate random assignments that we can add to student object.
   const getRandomThoughts = (int) => {

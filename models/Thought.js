@@ -1,5 +1,4 @@
 const { Schema, model } = require('mongoose');
-const reactionSchema = require('./Reaction');
 
 // Schema to create Student model
 const thoughtSchema = new Schema(
@@ -19,7 +18,7 @@ const thoughtSchema = new Schema(
       required: true,
       max_length: 50,
     },
-    reactions: [reactionSchema],
+    reactions: [],
   },
   {
     toJSON: {
@@ -36,11 +35,11 @@ thoughtSchema
     return formatDate;
   });
  thoughtSchema
-  .virutal('reactionCount')
+  .virtual('reactionCount')
   .get(function(){
-    return this.reactionSchema.lenght;
+    return this.reactions.length;
   });
 
-const Student = model('student', studentSchema);
+const Thought = model('thought', thoughtSchema);
 
-module.exports = Student;
+module.exports = Thought
